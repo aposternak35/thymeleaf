@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body th:align="center">
+<p>NODE</p>
+<p th:text="${path}"></p>
+<table th:align="center" border="1">
+    <thead>
+    <tr>
+        <th>NAME</th>
+        <th>SIZE (IN BYTES)</th>
+        <th>DATE CREATE</th>
+        <th>DATE UPDATE</th>
+    </tr>
+    </thead>
+    <tr th:each="myfile: ${files}">
+        <td ><a href="http://localhost:8080/dir?nextpath=C:\\Users" th:text="${myfile.name}"></a></td>
+        <td th:text="${myfile.size}"></td>
+        <td th:text="${myfile.dateCreate}"></td>
+        <td th:text="${myfile.dateUpdate}"></td>
+    </tr>
+</table>
+</body>
+</html>
