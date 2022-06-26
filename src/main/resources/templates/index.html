@@ -1,34 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>List</title>
-</head>
-<body th:align="center">
-<h1>Список пользователей</h1>
-<form th:action="@{/}" method="post">
-    <p>
-        <input name="sname" placeholder="Фамилия" th:value="${sname}">
-        <input name="fname" placeholder="Имя" th:value="${fname}">
-        <input name="pname" placeholder="Отчество" th:value="${pname}">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>List</title>-->
+<!--</head>-->
+<!--<body th:align="center">-->
+<!--<h1>Список пользователей</h1>-->
+<!--<form th:action="@{/}" method="post">-->
+<!--    <p>-->
+<!--        <input name="sname" placeholder="Фамилия" th:value="${sname}">-->
+<!--        <input name="fname" placeholder="Имя" th:value="${fname}">-->
+<!--        <input name="pname" placeholder="Отчество" th:value="${pname}">-->
 
-        <button type="submit">Отправить</button>
-    </p>
-</form>
+<!--        <button type="submit">Отправить</button>-->
+<!--    </p>-->
+<!--</form>-->
 
-<table th:align="center">
-    <thead>
-    <tr>
-        <th>Фамилия</th>
-        <th>Имя</th>
-        <th>Отчество</th>
-    </tr>
-    </thead>
-    <tr th:each="user: ${users}">
-        <td th:text="${user.sname}"></td>
-        <td th:text="${user.fname}"></td>
-        <td th:text="${user.pname}"></td>
-    </tr>
-</table>
-</body>
-</html>
+<!--<table th:align="center">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Фамилия</th>-->
+<!--        <th>Имя</th>-->
+<!--        <th>Отчество</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tr th:each="user: ${users}">-->
+<!--        <td th:text="${user.sname}"></td>-->
+<!--        <td th:text="${user.fname}"></td>-->
+<!--        <td th:text="${user.pname}"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
