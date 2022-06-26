@@ -1,4 +1,4 @@
-package application;
+package org.comp.demo;
 
 public class MyFile {
     private String name;

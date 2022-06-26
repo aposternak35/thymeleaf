@@ -1,10 +1,8 @@
-package application;
+package org.comp.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -20,8 +18,8 @@ public class FileController {
     private List<MyFile> files=new ArrayList();
     String nextpath="C:\\Users";
 
-    @RequestMapping(value = "/dir")
-    public String getPath(@RequestParam(value="nextpath",defaultValue = "C:\\Users") String nextpath, Model model) throws IOException {
+    @GetMapping(value = "/dir")
+    public String getPath(Model model) throws IOException {
         File[] directories = new File(nextpath).listFiles();
         files.clear();
         for (File dir:directories){
@@ -35,9 +33,14 @@ public class FileController {
             files.add(myfile);
             model.addAttribute("path",path);
         }
-
         model.addAttribute("files",files);
-
+        return "dir";
+    }
+    @PostMapping(value = "/dir")
+    public String postPath(@RequestParam(value="nextpath",defaultValue = "C:\\Users") String nextpath, HttpServletRequest request, Model model, @ModelAttribute MyFile myfile){
+        model.addAttribute("nextpath",nextpath);
+        request.setAttribute("nextpath",nextpath);
+        System.out.println(myfile.getName());
         return "dir";
     }
 }

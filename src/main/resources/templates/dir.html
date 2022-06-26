@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tr th:each="myfile: ${files}">
-        <td ><a href="http://localhost:8080/dir?nextpath=C:\\Users" th:text="${myfile.name}"></a></td>
+        <td ><form th:action="@{/}" method="post"><a href="http://localhost:8080/dir?nextpath=C:\\Users" th:value="${myfile.name}" th:text="${myfile.name}"></a></form></td>
         <td th:text="${myfile.size}"></td>
         <td th:text="${myfile.dateCreate}"></td>
         <td th:text="${myfile.dateUpdate}"></td>
